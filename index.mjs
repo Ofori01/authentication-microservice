@@ -8,7 +8,8 @@ import communicator from './communicator/index.mjs';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.AUTH_PORT;
+// const PORT = process.env.AUTH_PORT;
+const PORT = process.env.PORT
 
 
 app.listen(PORT, () => {
