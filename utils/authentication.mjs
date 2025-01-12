@@ -1,5 +1,5 @@
 import jsonwebtoken  from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 function generateToken(userID, name, role ) {
     try {
         let token = jsonwebtoken.sign({userID,name, role}, process.env.JWT_SECRET, {expiresIn: "30d"})
