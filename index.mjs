@@ -5,6 +5,7 @@ import { comparePasswords, generatePasswordHash, generateToken, refreshToken, ve
 import { createUser, deleteUser, findUserByEmail, updateUser } from './services/users.mjs';
 import { getUser, getUsers } from './utils/users.mjs';
 import communicator from './communicator/index.mjs';
+import cors from 'cors'
 dotenv.config();
 
 const app = express();
@@ -26,6 +27,7 @@ mongoose.connect(process.env.MONGO_URI_USERS).then(
 );
 
 app.use(express.json());
+app.use(cors())
 
 app.get('/api/test', (req, res) => {
     res.send("Auth Service is running");
