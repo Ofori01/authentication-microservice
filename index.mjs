@@ -45,6 +45,7 @@ app.post('/api/signin', async (req, res) => {
         res.status(200).send({token, user_id: user.user_id, name: user.name, role: user.role});
 
     } catch (error) {
+        console.log(error)
         res.status(500).send({msg: `${error.message}`})
         
     }
