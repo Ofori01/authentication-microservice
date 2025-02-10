@@ -42,7 +42,7 @@ app.post('/api/signin', async (req, res) => {
             return res.status(401).send("Invalid password");
         }
         const token = generateToken(user.user_id, user.name, user.role);
-        res.status(200).send({token, user_id: user.user_id, name: user.name, role: user.role});
+        res.status(200).send({token, user_id: user.user_id, name: user.name, role: user.role,email:user.email});
 
     } catch (error) {
         console.log(error)
